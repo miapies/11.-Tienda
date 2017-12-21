@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar color="dark">
+
+    <ion-buttons start>
+      <button ion-button
+        *ngIf="_us.activo()"
+        (click)="_us.cerrar_sesion()">
+        Salir
+      </button>
+    </ion-buttons>
+
     <ion-title>
       Mi Tienda
     </ion-title>
 
     <ion-buttons end>
 
-      <button ion-button icon-only class="button_carrito">
+      <button ion-button icon-only class="button_carrito" 
+        (click)="_cs.ver_carrito()">
         <ion-icon name="cart"></ion-icon>
-        <ion-badge color="danger" class="carrito_numero"
+        <ion-badge color="danger" class="carrito_numero" 
           *ngIf="_cs.items.length > 0">
           {{_cs.items.length}}
         </ion-badge>
@@ -23,7 +33,8 @@
   <ion-grid>
     <ion-row *ngFor="let pares of _ps.productos">
       <!-- Mi solución (click)="detalle_producto(item.codigo)"> -->
-      <ion-col *ngFor="let item of pares" [navParams]="{producto: item}" [navPush]="productoPage">
+      <ion-col *ngFor="let item of pares" 
+        [navParams]="{producto: item}" [navPush]="productoPage">
         <img [src]="item.codigo | imagen">
         <p>
           {{item.producto}}

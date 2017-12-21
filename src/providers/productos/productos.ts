@@ -30,7 +30,7 @@ export class ProductosProvider {
         } else {
 
           this.lineas = data.lineas;
-          console.log(this.lineas);
+          // console.log(this.lineas);
 
         }
 
@@ -114,7 +114,7 @@ export class ProductosProvider {
     for (let i = 0; i < arr.length; i += tamano) {
       nuevoArreglo.push(arr.slice(i, i + tamano))
     }
-    console.log(nuevoArreglo);
+    // console.log(nuevoArreglo);
     return nuevoArreglo;
   }
 

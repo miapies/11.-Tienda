@@ -17,7 +17,7 @@ export class ProductoPage {
     /* ,
     private _ps: ProductosProvider */) {
 
-    console.log(JSON.stringify(this.navParams.get('producto')));
+    // console.log(JSON.stringify(this.navParams.get('producto')));
     this.producto = this.navParams.get('producto');
 
     // Mi solución
