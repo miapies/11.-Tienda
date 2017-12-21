@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>{{producto.producto}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <img [src]="producto.codigo | imagen">
+  <div padding>
+    <h5>
+      {{producto.producto}}
+    </h5>
+    <p>
+      <strong>Precio: </strong>{{producto.precio_compra | currency}}
+    </p>
+    <p>
+      {{producto.descripcion}}
+      <br>
+      <strong>{{producto.proveedor}}</strong>
+    </p>
+    <button ion-button icon-left block color="dark">
+      <ion-icon name="cart"></ion-icon>
+      Agregar al carrito
+    </button>
+  </div>
+</ion-content>
