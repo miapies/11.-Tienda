@@ -21,7 +21,8 @@
       <br>
       <strong>{{producto.proveedor}}</strong>
     </p>
-    <button ion-button icon-left block color="dark">
+    <button ion-button icon-left block color="dark" 
+      (click)="_cs.agregar_carrito(producto)">
       <ion-icon name="cart"></ion-icon>
       Agregar al carrito
     </button>

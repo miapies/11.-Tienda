@@ -26,6 +26,8 @@ import { CarritoProvider } from '../providers/carrito/carrito';
 import { ProductosProvider } from '../providers/productos/productos';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 
+// Plugins
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

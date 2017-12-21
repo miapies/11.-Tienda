@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProductosProvider } from '../../providers/productos/productos';
 import { ProductoPage } from '../producto/producto';
+import { CarritoProvider } from '../../providers/carrito/carrito';
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,8 @@ export class HomePage {
   productoPage = ProductoPage;
 
   constructor(public navCtrl: NavController,
-    private _ps: ProductosProvider) {
+    private _ps: ProductosProvider,
+    public _cs: CarritoProvider) {
   }
 
   siguiente_pagina(infiniteScroll) {
