@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ProductosProvider } from '../../providers/productos/productos';
+import { NavController, ModalController } from 'ionic-angular';
 import { ProductoPage } from '../producto/producto';
-import { CarritoProvider } from '../../providers/carrito/carrito';
-import { UsuarioProvider } from '../../providers/usuario/usuario';
+import { ProductosProvider, CarritoProvider, UsuarioProvider } from '../../providers/index.providers';
+
+import { CarritoPage, LoginPage } from "../../pages/index.paginas";
 
 @Component({
   selector: 'page-home',
@@ -16,8 +16,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private _ps: ProductosProvider,
+    public _us: UsuarioProvider,
     public _cs: CarritoProvider,
-    public _us: UsuarioProvider) { }
+    private modalCtrl: ModalController) { }
 
   siguiente_pagina(infiniteScroll) {
 
@@ -28,6 +29,29 @@ export class HomePage {
         infiniteScroll.complete();
       });
 
+  }
+
+  ver_carrito() {
+    
+    let modal: any;
+
+    if (this._us.token) {
+      // Mostrar página del carrito
+      modal = this.modalCtrl.create(CarritoPage)
+    } else {
+      // Mostrar página de login
+      modal = this.modalCtrl.create(LoginPage);
+    }
+
+    modal.present();
+
+    modal.onDidDismiss((abrirCarrito: boolean) => {
+
+      if (abrirCarrito) {
+        this.modalCtrl.create(CarritoPage)
+          .present();
+      }
+    });
   }
 
   // Mi solución

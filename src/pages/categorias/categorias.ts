@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ProductosProvider } from '../../providers/productos/productos';
+import { ProductosProvider } from '../../providers/index.providers';
 import { PorCategoriasPage } from '../por-categorias/por-categorias';
 
 @Component({

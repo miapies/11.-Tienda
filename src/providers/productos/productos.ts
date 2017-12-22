@@ -53,7 +53,7 @@ export class ProductosProvider {
           } else {
 
             if (data.productos.length === 0) {
-              console.log('Ya no hay más registros');
+              // console.log('Ya no hay más registros');
               resolve(false);
               return;
             }

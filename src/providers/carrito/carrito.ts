@@ -1,47 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Platform, AlertController, ModalController } from 'ionic-angular';
+import { Platform, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { UsuarioProvider } from '../usuario/usuario';
-
-import { CarritoPage, LoginPage } from "../../pages/index.paginas";
 
 @Injectable()
 export class CarritoProvider {
 
   items: any[] = [];
+  total_carrito = 0;
 
   constructor(public http: HttpClient,
     private alertCtrl: AlertController,
     private storage: Storage,
-    private platform: Platform,
-    private _us: UsuarioProvider,
-    private modalCtrl: ModalController) {
+    private platform: Platform) {
 
     this.cargar_storage();
+    this.actualizar_total();
   }
 
-  ver_carrito() {
-
-    let modal: any;
-
-    if (this._us.token) {
-      // Mostrar página del carrito
-      modal = this.modalCtrl.create(CarritoPage)
-    } else {
-      // Mostrar página de login
-      modal = this.modalCtrl.create(LoginPage);
-    }
-
-    modal.present();
-
-    modal.onDidDismiss((abrirCarrito: boolean) => {
-
-      if (abrirCarrito) {
-        this.modalCtrl.create(CarritoPage)
-          .present();
-      }
-    });
+  remove_item(index: number) {
+    this.items.splice(index, 1);
+    this.guardar_storage();
+    this.actualizar_total();
   }
 
   agregar_carrito(item_agregado: any) {
@@ -63,8 +43,18 @@ export class CarritoProvider {
     }
 
     this.items.push(item_agregado);
+    this.actualizar_total();
     this.guardar_storage();
 
+  }
+
+  actualizar_total() {
+    this.total_carrito = 0;
+    for (const item of this.items) {
+      if (item.precio_compra) {
+        this.total_carrito += Number(item.precio_compra);
+      }
+    }
   }
 
   private guardar_storage() {

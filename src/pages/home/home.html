@@ -16,7 +16,7 @@
     <ion-buttons end>
 
       <button ion-button icon-only class="button_carrito" 
-        (click)="_cs.ver_carrito()">
+        (click)="ver_carrito()">
         <ion-icon name="cart"></ion-icon>
         <ion-badge color="danger" class="carrito_numero" 
           *ngIf="_cs.items.length > 0">

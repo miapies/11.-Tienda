@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { CarritoProvider } from '../../providers/carrito/carrito';
+import { CarritoProvider } from '../../providers/index.providers';
 // import { ProductosProvider } from '../../providers/productos/productos';
 
 @Component({

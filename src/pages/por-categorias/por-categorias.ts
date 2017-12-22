@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ProductosProvider } from '../../providers/productos/productos';
+import { ProductosProvider } from '../../providers/index.providers';
 import { ProductoPage } from '../producto/producto';
 
 @Component({
@@ -29,7 +29,7 @@ export class PorCategoriasPage {
 
     this._ps.cargar_por_categoria(this.categoria.id)
       .then((hayMas: boolean) => {
-        console.log(hayMas);
+        // console.log(hayMas);
         this.hayMas = hayMas;
         infiniteScroll.complete();
       });

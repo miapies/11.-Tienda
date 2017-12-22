@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ViewController, LoadingController } from 'ionic-angular';
-import { UsuarioProvider } from '../../providers/usuario/usuario';
+import { UsuarioProvider } from '../../providers/index.providers';
 
 @Component({
   selector: 'page-login',

@@ -22,9 +22,7 @@ import {
 import { ImagenPipe } from '../pipes/imagen/imagen';
 
 // Providers
-import { CarritoProvider } from '../providers/carrito/carrito';
-import { ProductosProvider } from '../providers/productos/productos';
-import { UsuarioProvider } from '../providers/usuario/usuario';
+import { ProductosProvider, UsuarioProvider, CarritoProvider } from '../providers/index.providers';
 
 // Plugins
 import { IonicStorageModule } from '@ionic/storage';
@@ -66,9 +64,9 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    CarritoProvider,
     ProductosProvider,
-    UsuarioProvider
+    UsuarioProvider,
+    CarritoProvider
   ]
 })
 export class AppModule { }
