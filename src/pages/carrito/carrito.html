@@ -34,7 +34,8 @@
           <p>
             {{item.precio_compra | currency:'USD':true}}
           </p>
-          <button ion-button color="danger" outline small 
+          <button ion-button color="danger" 
+            outline small block 
             (click)="_cs.remove_item(i)">
             Eliminar
           </button>
@@ -54,7 +55,8 @@
       </ion-row>
     </ion-grid>
 
-    <button ion-button block>
+    <button ion-button block 
+      (click)="_cs.realizar_pedido()">
       Realizar compra
     </button>
 
