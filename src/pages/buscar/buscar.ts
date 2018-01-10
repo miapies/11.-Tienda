@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProductosProvider } from '../../providers/productos/productos';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { ProductoPage } from '../producto/producto';
-import { NavController } from 'ionic-angular/navigation/nav-controller';
+// import { NavController } from 'ionic-angular/navigation/nav-controller';
 
 @Component({
   selector: 'page-buscar',
@@ -11,15 +11,16 @@ import { NavController } from 'ionic-angular/navigation/nav-controller';
 export class BuscarPage {
 
   productos: any[] = [];
+  productoPage = ProductoPage;
 
   constructor(private _ps: ProductosProvider,
-    private alertCtrl: AlertController,
-    public navCtrl: NavController) {
+    private alertCtrl: AlertController/* ,
+    public navCtrl: NavController */) {
   }
 
-  irProducto(item: any) {
-    this.navCtrl.push(ProductoPage, { producto: item })
-  }
+  // irProducto(item: any) {
+  //   this.navCtrl.push(ProductoPage, { producto: item })
+  // }
 
   buscar_item(ev: any) {
 

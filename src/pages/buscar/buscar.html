@@ -14,9 +14,15 @@
   <ion-list>
     <button ion-item 
       *ngFor="let item of productos" 
-      (click)="irProducto(item)">
+      [navPush]="productoPage"
+      [navParams]="{ producto: item }">
       {{ item.producto }}
     </button>
+    <!-- <button ion-item 
+      *ngFor="let item of productos" 
+      (click)="irProducto(item)">
+      {{ item.producto }}
+    </button> -->
   </ion-list>
 
 </ion-content>
