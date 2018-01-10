@@ -7,7 +7,7 @@ import { URL_SERVICIOS } from '../../config/url.servicios';
 export class ProductosProvider {
 
   pagina = 0;
-  pag_por_categoria = 0; 
+  pag_por_categoria = 0;
   productos: any[] = [];
   lineas: any[] = [];
   por_categoria: any[] = [];
@@ -118,6 +118,14 @@ export class ProductosProvider {
     return nuevoArreglo;
   }
 
+  get_item(termino: string) {
+
+    const url = URL_SERVICIOS + '/productos/buscar/' + termino;
+
+    return this.http.get(url);
+
+  }
+
   // Mi solución
   // obtener_producto(codigo) {
 
@@ -137,5 +145,6 @@ export class ProductosProvider {
 
   //   return promesa;
   // }
+
 
 }

@@ -178,7 +178,7 @@ export class CarritoProvider {
         } else {
 
           this.ordenes = data.ordenes;
-          console.log(this.ordenes);
+          // console.log(this.ordenes);
         }
 
       },

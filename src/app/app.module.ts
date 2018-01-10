@@ -15,7 +15,8 @@ import {
   OrdenesPage,
   PorCategoriasPage,
   ProductoPage,
-  TabsPage
+  TabsPage,
+  BuscarPage
 } from '../pages/index.paginas';
 
 // Pipes
@@ -39,7 +40,8 @@ import { IonicStorageModule } from '@ionic/storage';
     OrdenesPage,
     PorCategoriasPage,
     ProductoPage,
-    TabsPage
+    TabsPage,
+    BuscarPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { IonicStorageModule } from '@ionic/storage';
     OrdenesPage,
     PorCategoriasPage,
     ProductoPage,
-    TabsPage
+    TabsPage,
+    BuscarPage
   ],
   providers: [
     StatusBar,
